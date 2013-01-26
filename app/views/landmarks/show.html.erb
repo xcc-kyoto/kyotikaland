@@ -1,60 +1,60 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>名前:</b>
   <%= @landmark.name %>
 </p>
 
 <p>
-  <b>Latitude:</b>
+  <b>緯度:</b>
   <%= @landmark.latitude %>
 </p>
 
 <p>
-  <b>Longitude:</b>
+  <b>経度:</b>
   <%= @landmark.longitude %>
 </p>
 
 <p>
-  <b>Url:</b>
+  <b>URL:</b>
   <%= @landmark.url %>
 </p>
 
 <p>
-  <b>Question:</b>
+  <b>クイズ:</b>
   <%= @landmark.question %>
 </p>
 
 <p>
-  <b>Answer1:</b>
+  <b>答1:</b>
   <%= @landmark.answer1 %>
 </p>
 
 <p>
-  <b>Answer2:</b>
+  <b>答2:</b>
   <%= @landmark.answer2 %>
 </p>
 
 <p>
-  <b>Answer3:</b>
+  <b>答3:</b>
   <%= @landmark.answer3 %>
 </p>
 
 <p>
-  <b>Correct:</b>
+  <b>正解番号:</b>
   <%= @landmark.correct %>
 </p>
 
-<h2>Keywords</h2>
+<h2>キーワード</h2>
 <% @landmark.keywords.each do |keyword| %>
   <p>
     <%= keyword.body %>
-    <%= link_to 'Destroy', [@landmark, keyword],
-                :confirm => 'Are you sure?', :method => :delete %>
+    <%= link_to '削除', [@landmark, keyword],
+                :confirm => '削除してよろしいですか？', :method => :delete %>
   </p>
 <% end %>
 
-<h2>Add a keyword:</h2>
+<h2>キーワード追加:</h2>
 <%= form_for([@landmark, @landmark.keywords.build]) do |f| %>
   <div class="field">
     <%= f.text_field :body %>
@@ -64,5 +64,5 @@
   </div>
 <% end %>
 
-<%= link_to 'Edit', edit_landmark_path(@landmark) %> |
-<%= link_to 'Back', landmarks_path %>
+<%= link_to '編集', edit_landmark_path(@landmark) %> |
+<%= link_to '戻る', landmarks_path %>

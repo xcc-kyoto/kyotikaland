@@ -1,16 +1,16 @@
-<h1>Listing landmarks</h1>
+<h1>ランドマーク一覧</h1>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Latitude</th>
-    <th>Longitude</th>
-    <th>Url</th>
-    <th>Question</th>
-    <th>Answer1</th>
-    <th>Answer2</th>
-    <th>Answer3</th>
-    <th>Correct</th>
+    <th>名前</th>
+    <th>緯度</th>
+    <th>経度</th>
+    <th>URL</th>
+    <th>クイズ</th>
+    <th>答1</th>
+    <th>答2</th>
+    <th>答3</th>
+    <th>正解番号</th>
     <th></th>
     <th></th>
     <th></th>
@@ -27,13 +27,14 @@
     <td><%= landmark.answer2 %></td>
     <td><%= landmark.answer3 %></td>
     <td><%= landmark.correct %></td>
-    <td><%= link_to 'Show', landmark %></td>
-    <td><%= link_to 'Edit', edit_landmark_path(landmark) %></td>
-    <td><%= link_to 'Destroy', landmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to '詳細表示', landmark %></td>
+    <td><%= link_to '編集', edit_landmark_path(landmark) %></td>
+    <td><%= link_to '削除', landmark, method: :delete,
+      data: { confirm: '削除してよろしいですか？' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Landmark', new_landmark_path %>
+<%= link_to '新規作成', new_landmark_path %>
