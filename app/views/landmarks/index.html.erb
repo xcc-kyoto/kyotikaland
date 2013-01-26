@@ -7,6 +7,7 @@
     <th>緯度</th>
     <th>経度</th>
     <th>URL</th>
+    <th>キーワード</th>
     <th>クイズ</th>
     <th>答1</th>
     <th>答2</th>
@@ -23,6 +24,7 @@
     <td><%= landmark.latitude %></td>
     <td><%= landmark.longitude %></td>
     <td><%= link_to landmark.url, landmark.url, target: "_blank" %></td>
+    <td><%= join_keywords(landmark) %></td>
     <td><%= landmark.question %></td>
     <td><%= landmark.answer1 %></td>
     <td><%= landmark.answer2 %></td>
