@@ -4,8 +4,7 @@
 <table>
   <tr>
     <th>名前</th>
-    <th>緯度</th>
-    <th>経度</th>
+    <th>緯度・経度</th>
     <th>URL</th>
     <th>キーワード</th>
     <th>クイズ</th>
@@ -21,8 +20,7 @@
 <% @landmarks.each do |landmark| %>
   <tr>
     <td><%= landmark.name %></td>
-    <td><%= landmark.latitude %></td>
-    <td><%= landmark.longitude %></td>
+    <td><%= landmark.latitude %>,<%= landmark.longitude %></td>
     <td><%= link_to landmark.url, landmark.url, target: "_blank" %></td>
     <td><%= join_keywords(landmark) %></td>
     <td><%= landmark.question %></td>
