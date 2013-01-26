@@ -21,7 +21,7 @@
     <td><%= landmark.name %></td>
     <td><%= landmark.latitude %></td>
     <td><%= landmark.longitude %></td>
-    <td><%= landmark.url %></td>
+    <td><%= link_to landmark.url, landmark.url, target: "_blank" %></td>
     <td><%= landmark.question %></td>
     <td><%= landmark.answer1 %></td>
     <td><%= landmark.answer2 %></td>
