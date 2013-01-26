@@ -1,0 +1,39 @@
+<h1>Listing landmarks</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Url</th>
+    <th>Question</th>
+    <th>Answer1</th>
+    <th>Answer2</th>
+    <th>Answer3</th>
+    <th>Correct</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @landmarks.each do |landmark| %>
+  <tr>
+    <td><%= landmark.name %></td>
+    <td><%= landmark.latitude %></td>
+    <td><%= landmark.longitude %></td>
+    <td><%= landmark.url %></td>
+    <td><%= landmark.question %></td>
+    <td><%= landmark.answer1 %></td>
+    <td><%= landmark.answer2 %></td>
+    <td><%= landmark.answer3 %></td>
+    <td><%= landmark.correct %></td>
+    <td><%= link_to 'Show', landmark %></td>
+    <td><%= link_to 'Edit', edit_landmark_path(landmark) %></td>
+    <td><%= link_to 'Destroy', landmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Landmark', new_landmark_path %>

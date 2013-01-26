@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @landmark.name %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @landmark.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @landmark.longitude %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @landmark.url %>
+</p>
+
+<p>
+  <b>Question:</b>
+  <%= @landmark.question %>
+</p>
+
+<p>
+  <b>Answer1:</b>
+  <%= @landmark.answer1 %>
+</p>
+
+<p>
+  <b>Answer2:</b>
+  <%= @landmark.answer2 %>
+</p>
+
+<p>
+  <b>Answer3:</b>
+  <%= @landmark.answer3 %>
+</p>
+
+<p>
+  <b>Correct:</b>
+  <%= @landmark.correct %>
+</p>
+
+<h2>Keywords</h2>
+<% @landmark.keywords.each do |keyword| %>
+  <p>
+    <%= keyword.body %>
+    <%= link_to 'Destroy', [@landmark, keyword],
+                :confirm => 'Are you sure?', :method => :delete %>
+  </p>
+<% end %>
+
+<h2>Add a keyword:</h2>
+<%= form_for([@landmark, @landmark.keywords.build]) do |f| %>
+  <div class="field">
+    <%= f.text_field :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_landmark_path(@landmark) %> |
+<%= link_to 'Back', landmarks_path %>
