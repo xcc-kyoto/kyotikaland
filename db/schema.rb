@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130126031754) do
+ActiveRecord::Schema.define(:version => 20130131011114) do
 
   create_table "keywords", :force => true do |t|
     t.string   "body"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130126031754) do
     t.integer  "correct"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "author"
   end
 
 end
