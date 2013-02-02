@@ -51,6 +51,11 @@
     作成者<br />
     <%= f.text_field :author %>
   </div>
+  <h2>タグ</h2>
+  <div class="field">
+    <%= f.text_field :tag_tokens, data: {load: @landmark.tags} %>
+  </div>
+  <br />
   <div class="actions">
     <%= f.submit %>
   </div>

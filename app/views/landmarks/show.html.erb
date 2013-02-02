@@ -50,23 +50,11 @@
   <%= @landmark.author %>
 </p>
 
-<h2>キーワード</h2>
-<% @landmark.keywords.each do |keyword| %>
+<h2>タグ</h2>
+<% @landmark.tags.each do |tag| %>
   <p>
-    <%= keyword.body %>
-    <%= link_to '削除', [@landmark, keyword],
-                :confirm => '削除してよろしいですか？', :method => :delete %>
+    <%= tag.name %>
   </p>
-<% end %>
-
-<h2>キーワード追加:</h2>
-<%= form_for([@landmark, @landmark.keywords.build]) do |f| %>
-  <div class="field">
-    <%= f.text_field :body %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
 
 <%= link_to '編集', edit_landmark_path(@landmark) %> |
