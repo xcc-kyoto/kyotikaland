@@ -1,4 +1,7 @@
 Kyotikaland::Application.routes.draw do
+  resources :tags
+
+
   resources :landmarks do
     resources :keywords
   end
