@@ -2,7 +2,7 @@ class LandmarksController < ApplicationController
   # GET /landmarks
   # GET /landmarks.json
   def index
-    @landmarks = Landmark.order(:name)
+    @landmarks = Landmark.order(:name).page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb

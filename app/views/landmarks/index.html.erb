@@ -1,5 +1,8 @@
 <h1>ランドマーク一覧</h1>
-登録数：<%= @landmarks.count %>件
+
+<%= page_entries_info @landmarks %>
+<br />
+<%= paginate @landmarks %>
 
 <table>
   <tr>

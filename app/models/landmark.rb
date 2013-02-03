@@ -6,6 +6,8 @@ class Landmark < ActiveRecord::Base
   has_many :tags, through: :taggings
   attr_reader :tag_tokens
 
+  paginates_per 20
+
   def tag_tokens=(tokens)
     self.tag_ids = Tag.ids_from_tokens(tokens)
   end
