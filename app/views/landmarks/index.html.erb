@@ -15,7 +15,6 @@
     <th>作成者</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @landmarks.each do |landmark| %>
@@ -32,8 +31,6 @@
     <td><%= landmark.author %></td>
     <td><%= link_to '詳細表示', landmark %></td>
     <td><%= link_to '編集', edit_landmark_path(landmark) %></td>
-    <td><%= link_to '削除', landmark, method: :delete,
-      data: { confirm: '削除してよろしいですか？' } %></td>
   </tr>
 <% end %>
 </table>
