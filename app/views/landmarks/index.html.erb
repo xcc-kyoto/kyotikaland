@@ -1,8 +1,18 @@
 <h1>ランドマーク一覧</h1>
 
-<%= page_entries_info @landmarks %>
-<br />
+<%= link_to '新規作成', new_landmark_path %>
+
+<%= form_tag landmarks_path, method: 'get' do %>
+  <p>
+    名前や作成者で検索
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "検索", name: nil %>
+  </p>
+<% end %>
+
 <%= paginate @landmarks %>
+<%= @landmarks.total_count %>件中<%= @landmarks.offset_value %>
+〜<%= @landmarks.offset_value + @landmarks.length %>件を表示しています。
 
 <table>
   <tr>
@@ -40,4 +50,4 @@
 
 <br />
 
-<%= link_to '新規作成', new_landmark_path %>
+<%= paginate @landmarks %>
