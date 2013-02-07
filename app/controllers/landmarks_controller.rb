@@ -3,6 +3,7 @@ class LandmarksController < ApplicationController
   # GET /landmarks.json
   def index
     @landmarks = Landmark.search(params[:search]).order(:name).page params[:page]
+    @locations = Landmark.available_locations
 
     respond_to do |format|
       format.html # index.html.erb

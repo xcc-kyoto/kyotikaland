@@ -1,6 +1,7 @@
 <h1>ランドマーク一覧</h1>
 
 <%= link_to '新規作成', new_landmark_path %>
+<%= link_to '地図で確認', map_link_all(@locations), target: "_blank" %>
 
 <%= form_tag landmarks_path, method: 'get' do %>
   <p>
