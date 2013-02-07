@@ -33,7 +33,7 @@
 <% @landmarks.each do |landmark| %>
   <tr>
     <td><%= landmark.name %></td>
-    <td><%= landmark.latitude %>,<%= landmark.longitude %></td>
+    <td><%= map_link(landmark) %></td>
     <td><%= link_to landmark.url, landmark.url, target: "_blank" %></td>
     <td><%= join_tags(landmark) %></td>
     <td><%= landmark.question %></td>

@@ -6,4 +6,24 @@ module LandmarksHelper
   def join_tags(landmark)
     landmark.tags.map { |k| k.name }.join(", ")
   end
+
+  def map_link(landmark)
+    return point(landmark) unless key = ENV["GOOGLE_KEY"]
+    link_to point(landmark), map_url(landmark, key), target: "_blank"
+  end
+
+  private
+
+  def point(landmark)
+    "#{landmark.latitude},#{landmark.longitude}"
+  end
+
+  def map_url(landmark, google_key)
+    base = "http://maps.googleapis.com/maps/api/staticmap"
+    attr = "?center=Kyoto&zoom=13&size=600x600&sensor=false"
+    key = "&key=#{google_key}"
+    point = point(landmark)
+    marker = "&markers=%7C#{point}"
+    base + attr + key + marker
+  end
 end
