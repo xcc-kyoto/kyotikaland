@@ -3,6 +3,7 @@ class Landmark < ActiveRecord::Base
     :name, :latitude, :longitude, :url, :tag_tokens, :author
   attr_reader :tag_tokens
 
+  validates :name, presence: true, uniqueness: true
   validates :correct, numericality: { greater_than_or_equal_to: 1,
                                       less_than_or_equal_to: 3 }
 
