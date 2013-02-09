@@ -16,8 +16,12 @@ module LandmarksHelper
   end
 
   def map_link(landmark)
-    return point(landmark) unless key = ENV["GOOGLE_KEY"]
-    link_to point(landmark), map_url(landmark, key), target: "_blank"
+    return "" unless key = ENV["GOOGLE_KEY"]
+    if landmark.url.blank?
+      ""
+    else
+      link_to "*", map_url(landmark, key, "", 17), target: "_blank"
+    end
   end
 
   def map_link_all(locations)
@@ -36,9 +40,9 @@ module LandmarksHelper
     "#{landmark.latitude},#{landmark.longitude}"
   end
 
-  def map_url(landmark, google_key)
+  def map_url(landmark, google_key, center="Kyoto", zoom=12)
     base = "http://maps.googleapis.com/maps/api/staticmap"
-    attr = "?center=Kyoto&zoom=12&size=700x700&sensor=false"
+    attr = "?center=#{center}&zoom=#{zoom}&size=700x700&sensor=false"
     key = "&key=#{google_key}"
     point = point(landmark)
     marker = "&markers=%7C#{point}"
