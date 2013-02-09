@@ -198,6 +198,10 @@ ja:
     models:
       landmark: ランドマーク
       tag: タグ
+    attributes:
+      landmark:
+        name: 名前
+        correct: 正解番号
   views:
     pagination:
       first: 先頭
