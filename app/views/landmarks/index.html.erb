@@ -20,7 +20,6 @@
     <th></th>
     <th>名前</th>
     <th>緯度・経度</th>
-    <th>URL</th>
     <th>タグ</th>
     <th>クイズ</th>
     <th>答1</th>
@@ -33,9 +32,8 @@
 <% @landmarks.each do |landmark| %>
   <tr>
     <td><%= link_to '編集', edit_landmark_path(landmark) %></td>
-    <td><%= landmark.name %></td>
+    <td><%= name(landmark) %></td>
     <td><%= map_link(landmark) %></td>
-    <td><%= link_to landmark.url, landmark.url, target: "_blank" %></td>
     <td><%= join_tags(landmark) %></td>
     <td><%= landmark.question %></td>
     <td><%= landmark.answer1 %></td>

@@ -1,4 +1,12 @@
 module LandmarksHelper
+  def name(landmark)
+    if landmark.url.blank?
+      landmark.name
+    else
+      link_to landmark.name, landmark.url, target: "_blank"
+    end
+  end
+
   def join_keywords(landmark)
     landmark.keywords.map { |k| k.body }.join(", ")
   end
