@@ -17,6 +17,7 @@
 
 <table>
   <tr>
+    <th></th>
     <th>名前</th>
     <th>緯度・経度</th>
     <th>URL</th>
@@ -27,12 +28,11 @@
     <th>答3</th>
     <th>正解番号</th>
     <th>作成者</th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @landmarks.each do |landmark| %>
   <tr>
+    <td><%= link_to '編集', edit_landmark_path(landmark) %></td>
     <td><%= landmark.name %></td>
     <td><%= map_link(landmark) %></td>
     <td><%= link_to landmark.url, landmark.url, target: "_blank" %></td>
@@ -43,8 +43,6 @@
     <td><%= landmark.answer3 %></td>
     <td><%= landmark.correct %></td>
     <td><%= landmark.author %></td>
-    <td><%= link_to '詳細表示', landmark %></td>
-    <td><%= link_to '編集', edit_landmark_path(landmark) %></td>
   </tr>
 <% end %>
 </table>
