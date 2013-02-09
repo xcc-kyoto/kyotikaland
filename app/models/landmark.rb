@@ -10,7 +10,7 @@ class Landmark < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
 
-  paginates_per 20
+  paginates_per 100
 
   def self.search(search)
     if search
