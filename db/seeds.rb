@@ -10,7 +10,7 @@ h = {name: "清水寺",
      correct: 2}
 t = Tag.create([{name: "坂上田村麻呂"}, {name: "源氏物語"}, {name: "真言宗"}])
 
-60.times do |i|
+300.times do |i|
   h[:name] = "清水寺#{i}"
   l = Landmark.create(h)
   l.tags = t

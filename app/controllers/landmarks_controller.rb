@@ -2,7 +2,8 @@ class LandmarksController < ApplicationController
   # GET /landmarks
   # GET /landmarks.json
   def index
-    @landmarks = Landmark.search(params[:search]).order(:name).page params[:page]
+    @search = Landmark.search(params[:q])
+    @landmarks = @search.result.page params[:page]
     @locations = Landmark.available_locations
 
     respond_to do |format|
