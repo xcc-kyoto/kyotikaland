@@ -13,15 +13,6 @@ class Landmark < ActiveRecord::Base
 
   paginates_per 100
 
-  def self.search(search)
-    if search
-      q = "%#{search}%"
-      self.where("name like ? or author like ?", q, q)
-    else
-      self
-    end
-  end
-
   def tag_tokens=(tokens)
     self.tag_ids = Tag.ids_from_tokens(tokens)
   end
