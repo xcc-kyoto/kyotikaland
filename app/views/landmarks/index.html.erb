@@ -21,6 +21,7 @@
   <tr>
     <th></th>
     <th><%= sort_link(@search, :name, "名前") %></th>
+    <th><%= sort_link(@search, :hiragana, "よみ") %></th>
     <th>地図</th>
     <th>タグ</th>
     <th><%= sort_link(@search, :question, "クイズ") %></th>
@@ -35,6 +36,7 @@
   <tr>
     <td><%= link_to '編集', edit_landmark_path(landmark) %></td>
     <td><%= name(landmark) %></td>
+    <td><%= landmark.hiragana %></td>
     <td><%= map_link(landmark) %></td>
     <td><%= join_tags(landmark) %></td>
     <td><%= landmark.question %></td>

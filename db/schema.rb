@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130202111528) do
+ActiveRecord::Schema.define(:version => 20130222051652) do
 
   create_table "keywords", :force => true do |t|
     t.string   "body"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20130202111528) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "author"
+    t.string   "hiragana"
   end
 
   create_table "taggings", :force => true do |t|

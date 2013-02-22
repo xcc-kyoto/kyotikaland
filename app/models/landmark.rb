@@ -1,9 +1,9 @@
 class Landmark < ActiveRecord::Base
   attr_accessible :question, :answer1, :answer2, :answer3, :correct,
-    :name, :latitude, :longitude, :url, :tag_tokens, :author
+    :name, :latitude, :longitude, :url, :tag_tokens, :author, :hiragana
   attr_reader :tag_tokens
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, :hiragana, presence: true, uniqueness: true
   validates :correct, numericality: { greater_than_or_equal_to: 1,
                                       less_than_or_equal_to: 3 }
 
